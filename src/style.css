@@ -1,0 +1,35 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  background: #ffffffeb;
+  padding: 16px;
+  box-shadow: 0 0 10px #00000026;
+  margin: 0;
+  font-size: 14px;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.list img {
+  margin-right: 6px;
+}

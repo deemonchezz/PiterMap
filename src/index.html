@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google карта</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <ul class="list">
+      <li><img src="1.png" alt="" />ООО "Спецтранс ЖСК"</li>
+      <li><img src="7.png" alt="" />АО "Автопарк № 1 "Спецтранс"</li>
+      <li><img src="2.png" alt="" />ООО "Мехуборка"</li>
+      <li><img src="3.png" alt="" />ООО "ТЭК"</li>
+      <li><img src="4.png" alt="" />ООО "ПКФ "Петро-Васт"</li>
+      <li><img src="5.png" alt="" />АО "Автопарк № 6 "Спецтранс"</li>
+      <li><img src="6.png" alt="" />ООО "Спецтранс Палир"</li>
+      <li><img src="8.png" alt="" />ООО Релайтер</li>
+      <li><img src="9.png" alt="" />ООО Спецсервис</li>
+      <li><img src="10.png" alt="" />ЭКО-ДАВсервис</li>
+    </ul>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
