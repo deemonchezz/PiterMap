@@ -26,14 +26,6 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.(ts|js)$/,
-          loader: "string-replace-loader",
-          options: {
-            search: /YOUR_API_KEY/g,
-            replace: process.env.GOOGLE_MAPS_API_KEY,
-          },
-        },
-        {
           test: /\.js$/i,
           exclude: /node_modules/,
           use: {
@@ -72,12 +64,6 @@ module.exports = (env) => {
               template: "src/index.html",
               inject: false,
             }),
-            new HtmlReplaceWebpackPlugin([
-              {
-                pattern: /YOUR_API_KEY/g,
-                replacement: process.env.GOOGLE_MAPS_API_KEY,
-              },
-            ]),
             new MiniCssExtractPlugin({
               filename: "style.css",
             }),
@@ -86,7 +72,7 @@ module.exports = (env) => {
     devServer: {
       liveReload: true,
       host: "0.0.0.0",
-      firewall: false,
+      allowedHosts: 'all',
       hot: false,
     },
     externals: {
