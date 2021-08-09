@@ -15,69 +15,27 @@ import {
 } from "./data";
 import "./style.css";
 
+let map: google.maps.Map;
+const markersGroup: google.maps.Marker[] = [];
+
 function initMap(): void {
   const center = new google.maps.LatLng(59.967502, 30.35128);
-  const map = new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
-      zoom: 10,
-      center: center,
-      gestureHandling: "greedy",
-    },
-  );
+  map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+    zoom: 10,
+    center: center,
+    gestureHandling: "greedy",
+  });
 
-  const renderData = (data, icon) => {
-    data.forEach((el) => {
-      return new google.maps.Marker({
-        position: { lat: el[0], lng: el[1] },
-        map: map,
-        icon: {
-          url: icon,
-          scaledSize: new google.maps.Size(7, 7),
-        },
-        zIndex: 100,
-      });
-    });
-  };
-
-  const renderMarkers = (array) => {
-    array.forEach((el) => {
-      const marker = new google.maps.Marker({
-        position: el?.position,
-        map: map,
-        icon: {
-          url: el?.icon,
-          scaledSize: new google.maps.Size(32, 32),
-          anchor: new google.maps.Point(16, 32),
-        },
-        title: el?.address,
-        zIndex: 300,
-      });
-
-      const infowindow = new google.maps.InfoWindow({
-        content: el?.address,
-      });
-
-      marker.addListener("click", () => {
-        infowindow.open({
-          anchor: marker,
-          map,
-          shouldFocus: false,
-        });
-      });
-    });
-  };
-
-  renderData(data1, "b1.png");
-  renderData(data2, "b2.png");
-  renderData(data3, "b3.png");
-  renderData(data4, "b4.png");
-  renderData(data5, "b5.png");
-  renderData(data6, "b6.png");
-  renderData(data7, "b7.png");
-  renderData(data8, "b8.png");
-  renderData(data9, "b9.png");
-  renderData(data10, "b10.png");
+  renderData(data1, 1);
+  renderData(data2, 2);
+  renderData(data3, 3);
+  renderData(data4, 4);
+  renderData(data5, 5);
+  renderData(data6, 6);
+  renderData(data7, 7);
+  renderData(data8, 8);
+  renderData(data9, 9);
+  renderData(data10, 10);
 
   renderMarkers(markers);
   renderMarkers(garages);
@@ -89,7 +47,7 @@ function initMap(): void {
 
       stylers: [
         {
-          visibility: "off",
+          // visibility: "off",
         },
       ],
     },
@@ -98,5 +56,65 @@ function initMap(): void {
   map.setOptions({
     styles: noPoi,
   });
+
+  document!.getElementById("myBtn")?.addEventListener("click", hideMarkers);
 }
+
+const renderData = (data, key) => {
+  data.forEach((el) => {
+    markersGroup.push(
+      new google.maps.Marker({
+        position: { lat: el[0], lng: el[1] },
+        map: map,
+        icon: {
+          url: `b${key}.png`,
+          scaledSize: new google.maps.Size(7, 7),
+        },
+        zIndex: 100,
+      }),
+    );
+  });
+};
+
+const renderMarkers = (array) => {
+  array.forEach((el) => {
+    const marker = new google.maps.Marker({
+      position: el?.position,
+      map: map,
+      icon: {
+        url: el?.icon,
+        scaledSize: new google.maps.Size(36, 36),
+        anchor: new google.maps.Point(16, 32),
+      },
+      title: el?.address,
+      zIndex: 300,
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+      content: el?.address,
+    });
+
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+    });
+  });
+};
+
+// const hideMarker = (key) => {
+//   console.log(key, markersGroup[key]);
+//   markersGroup[key].setMap(null);
+//   console.log(key, markersGroup[key]);
+// };
+
+function hideMarkers() {
+  for (var i = 0; i < markersGroup.length; i++) {
+    markersGroup[i].setVisible(false);
+    console.log(markersGroup[i]);
+  }
+}
+
 export { initMap };
