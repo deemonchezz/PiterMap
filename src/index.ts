@@ -16,7 +16,7 @@ import {
 import "./style.css";
 
 let map: google.maps.Map;
-const markersGroup: google.maps.Marker[] = [];
+const markersGroup = {};
 
 function initMap(): void {
   const center = new google.maps.LatLng(59.967502, 30.35128);
@@ -57,12 +57,18 @@ function initMap(): void {
     styles: noPoi,
   });
 
-  document!.getElementById("myBtn")?.addEventListener("click", hideMarkers);
+  const checkboxes = document.querySelectorAll(".checkbox-item");
+  checkboxes.forEach((i: any) => {
+    i.addEventListener("click", () => {
+      hideMarkers(i.value, i.checked);
+    });
+  });
 }
 
 const renderData = (data, key) => {
+  markersGroup[`marker${key}`] = [];
   data.forEach((el) => {
-    markersGroup.push(
+    markersGroup[`marker${key}`].push(
       new google.maps.Marker({
         position: { lat: el[0], lng: el[1] },
         map: map,
@@ -104,16 +110,10 @@ const renderMarkers = (array) => {
   });
 };
 
-// const hideMarker = (key) => {
-//   console.log(key, markersGroup[key]);
-//   markersGroup[key].setMap(null);
-//   console.log(key, markersGroup[key]);
-// };
-
-function hideMarkers() {
-  for (var i = 0; i < markersGroup.length; i++) {
-    markersGroup[i].setVisible(false);
-    console.log(markersGroup[i]);
+function hideMarkers(key, value) {
+  const currentGroup = markersGroup[`marker${key}`];
+  for (var i = 0; i < currentGroup.length; i++) {
+    currentGroup[i].setVisible(value);
   }
 }
 
