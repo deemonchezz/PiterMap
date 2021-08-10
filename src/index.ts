@@ -18,53 +18,6 @@ import "./style.css";
 let map: google.maps.Map;
 const markersGroup = {};
 
-function initMap(): void {
-  const center = new google.maps.LatLng(59.967502, 30.35128);
-  map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-    zoom: 10,
-    center: center,
-    gestureHandling: "greedy",
-  });
-
-  renderData(data1, 1);
-  renderData(data2, 2);
-  renderData(data3, 3);
-  renderData(data4, 4);
-  renderData(data5, 5);
-  renderData(data6, 6);
-  renderData(data7, 7);
-  renderData(data8, 8);
-  renderData(data9, 9);
-  renderData(data10, 10);
-
-  renderMarkers(markers);
-  renderMarkers(garages);
-
-  var noPoi = [
-    {
-      featureType: "poi",
-      elementType: "labels",
-
-      stylers: [
-        {
-          // visibility: "off",
-        },
-      ],
-    },
-  ];
-
-  map.setOptions({
-    styles: noPoi,
-  });
-
-  const checkboxes = document.querySelectorAll(".checkbox-item");
-  checkboxes.forEach((i: any) => {
-    i.addEventListener("click", () => {
-      hideMarkers(i.value, i.checked);
-    });
-  });
-}
-
 const renderData = (data, key) => {
   markersGroup[`marker${key}`] = [];
   data.forEach((el) => {
@@ -115,6 +68,53 @@ function hideMarkers(key, value) {
   for (var i = 0; i < currentGroup.length; i++) {
     currentGroup[i].setVisible(value);
   }
+}
+
+function initMap(): void {
+  const center = new google.maps.LatLng(59.967502, 30.35128);
+  map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+    zoom: 10,
+    center: center,
+    gestureHandling: "greedy",
+  });
+
+  renderData(data1, 1);
+  renderData(data2, 2);
+  renderData(data3, 3);
+  renderData(data4, 4);
+  renderData(data5, 5);
+  renderData(data6, 6);
+  renderData(data7, 7);
+  renderData(data8, 8);
+  renderData(data9, 9);
+  renderData(data10, 10);
+
+  renderMarkers(markers);
+  renderMarkers(garages);
+
+  var noPoi = [
+    {
+      featureType: "poi",
+      elementType: "labels",
+
+      stylers: [
+        {
+          visibility: "off",
+        },
+      ],
+    },
+  ];
+
+  map.setOptions({
+    styles: noPoi,
+  });
+
+  const checkboxes = document.querySelectorAll(".checkbox-item");
+  checkboxes.forEach((i: any) => {
+    i.addEventListener("click", () => {
+      hideMarkers(i.value, i.checked);
+    });
+  });
 }
 
 export { initMap };
