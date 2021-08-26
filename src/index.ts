@@ -20,6 +20,13 @@ import "./style.css";
 let map: google.maps.Map;
 const markersGroup = {};
 
+function hideMarkers(key, value) {
+  const currentGroup = markersGroup[`marker${key}`];
+  for (var i = 0; i < currentGroup.length; i++) {
+    currentGroup[i].setVisible(value);
+  }
+}
+
 const renderData = (data, key) => {
   markersGroup[`marker${key}`] = [];
   data.forEach((el) => {
@@ -64,13 +71,6 @@ const renderMarkers = (array) => {
     });
   });
 };
-
-function hideMarkers(key, value) {
-  const currentGroup = markersGroup[`marker${key}`];
-  for (var i = 0; i < currentGroup.length; i++) {
-    currentGroup[i].setVisible(value);
-  }
-}
 
 function initMap(): void {
   const center = new google.maps.LatLng(59.967502, 30.35128);
