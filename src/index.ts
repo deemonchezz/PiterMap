@@ -10,6 +10,8 @@ import {
   data8,
   data9,
   data10,
+  data11,
+  data12,
   markers,
   garages,
 } from "./data";
@@ -49,12 +51,12 @@ const renderMarkers = (array) => {
       zIndex: 300,
     });
 
-    const infowindow = new google.maps.InfoWindow({
+    const infoWindow = new google.maps.InfoWindow({
       content: el?.address,
     });
 
     marker.addListener("click", () => {
-      infowindow.open({
+      infoWindow.open({
         anchor: marker,
         map,
         shouldFocus: false,
@@ -88,6 +90,8 @@ function initMap(): void {
   renderData(data8, 8);
   renderData(data9, 9);
   renderData(data10, 10);
+  renderData(data11, 11);
+  renderData(data12, 12);
 
   renderMarkers(markers);
   renderMarkers(garages);
