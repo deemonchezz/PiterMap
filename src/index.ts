@@ -12,6 +12,7 @@ import {
   data10,
   data11,
   data12,
+  data13,
   markers,
   garages,
 } from "./data";
@@ -92,6 +93,7 @@ function initMap(): void {
   renderData(data10, 10);
   renderData(data11, 11);
   renderData(data12, 12);
+  renderData(data13, 13);
 
   renderMarkers(markers);
   renderMarkers(garages);
