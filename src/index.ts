@@ -113,15 +113,15 @@ function initMap(): void {
     },
   ];
 
-  map.setOptions({
-    styles: noPoi,
-  });
-
   const checkboxes = document.querySelectorAll(".checkbox-item");
   checkboxes.forEach((i: any) => {
     i.addEventListener("click", () => {
       hideMarkers(i.value, i.checked);
     });
+  });
+
+  map.setOptions({
+    styles: noPoi,
   });
 }
 
