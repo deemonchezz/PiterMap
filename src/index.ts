@@ -81,6 +81,9 @@ function initMap(): void {
     center: center,
     gestureHandling: "greedy",
   });
+  
+  renderMarkers(markers);
+  renderMarkers(garages);
 
   renderData(data1, 1);
   renderData(data2, 2);
@@ -96,9 +99,6 @@ function initMap(): void {
   renderData(data12, 12);
   renderData(data13, 13);
   renderData(data14, 14);
-
-  renderMarkers(markers);
-  renderMarkers(garages);
 
   var noPoi = [
     {
