@@ -23021,64 +23021,64 @@ export const markers = [
   {
     position: { lat: 60.057018623050176, lng: 30.36669257810763 },
     address: 'Парнас – Санкт-Петербург, ул. Верхняя, д. 11, лит. А, лит. Б',
-    icon: 'm4.png'
+    icon: 'd4.svg'
   },
   {
     position: { lat: 59.822491478583586, lng: 30.4589976115472 },
     address: 'Софийская – Санкт-Петербург, Софийская ул., д. 96, лит. АЛ',
-    icon: 'm4.png'
+    icon: 'd4.svg'
   },
   {
     position: { lat: 59.81712234425394, lng: 30.504896083140107 },
     address: 'Рыбацкое – Санкт-Петербург, Вагонный проезд, 14Е',
-    icon: 'm4.png'
+    icon: 'd4.svg'
   },
 
   {
     position: { lat: 60.025927, lng: 30.266353 },
     address: 'АО «Автопарк №6 «Спецтранс» – Автобусный пер., д. 2 ',
-    icon: 'm5.png'
+    icon: 'd5.svg'
   },
   {
     position: { lat: 59.921047, lng: 30.435326 },
     address: 'АО «Автопарк №6 «Спецтранс» – Складская ул., уч. 17',
-    icon: 'm5.png'
+    icon: 'd5.svg'
   },
 
   {
     position: { lat: 59.841324, lng: 30.460578 },
     address: 'АО «Автопарк № 1 «Спецтранс» – Грузовой пр-д. 12Дк1',
-    icon: 'm7.png'
+    icon: 'd7.svg'
   },
   {
     position: { lat: 59.836303, lng: 30.2948277 },
     address: 'АО «Автопарк № 1 «Спецтранс» – Предпортовый',
-    icon: 'm7.png'
+    icon: 'd7.svg'
   },
   {
     position: { lat: 59.890889, lng: 30.305591 },
     address: 'Перегруз Спецтранс № 1 - Старообрядческая улица, д. 9',
-    icon: 'm7.png'
+    icon: 'd7.svg'
   },
   {
     position: { lat: 60.073972, lng: 30.486972 },
     address: 'Перегруз ООО «СпецСервис» – Новое Девяткино',
-    icon: 'm9.png'
+    icon: 'd9.svg'
   },
   {
     position: { lat: 59.816364, lng: 30.305555 },
     address: 'Перегруз ООО «Мехуборка» – г.Санкт-Петербург, ул.Штурманская, дом 7, к.3',
-    icon: 'm2.png'
+    icon: 'd2.svg'
   },
   {
     position: { lat: 59.967561, lng: 30.452601 },
     address: 'Перегруз ООО «Спецтранс ЖСК» – Уманский пер., д.72 б,в',
-    icon: 'm1.png'
+    icon: 'd1.svg'
   },
   {
     position: { lat: 59.807016, lng: 30.135891 },
     address: 'Перегруз ООО «ТЭК» – Волхонское шоссе, 117',
-    icon: 'm3.png'
+    icon: 'd3.svg'
   }
 ];
 
@@ -23086,81 +23086,81 @@ export const garages = [
   {
     position: { lat: 59.907844, lng: 30.403256 },
     address: 'Стоянка – Хрустальная, 27',
-    icon: 'g4.png'
+    icon: 'g4.svg'
   },
   {
     position: { lat: 60.056144, lng: 30.369039 },
     address: 'Верхняя, 11',
-    icon: 'g4.png'
+    icon: 'g4.svg'
   },
 
   {
     position: { lat: 59.97235, lng: 30.438967 },
     address: 'Стоянка – Проспект Эенеретиков д. 59',
-    icon: 'g5.png'
+    icon: 'g5.svg'
   },
 
   {
     position: { lat: 59.600018, lng: 30.067071 },
     address: 'Стоянка – Ленинградская область, Гатчинский район, д. Малое Рейзино, д. 5б',
-    icon: 'g11.png'
+    icon: 'g11.svg'
   },
 
   {
     position: { lat: 59.775246, lng: 30.080878 },
     address: 'Стоянка – Ленинградская область, , Ломоносовский район, Анино, д. Пески',
-    icon: 'g3.png'
+    icon: 'g3.svg'
   },
   {
     position: { lat: 59.861399, lng: 30.231157 },
     address: 'Стоянка – проспект Маршала Жукова, 23Г',
-    icon: 'g3.png'
+    icon: 'g3.svg'
   },
   {
     position: { lat: 59.807016, lng: 30.135891 },
     address: 'Стоянка – Волхонское шоссе, 117',
-    icon: 'g3.png'
+    icon: 'g3.svg'
   },
 
   {
     position: { lat: 59.967561, lng: 30.452601 },
     address: 'Стоянка – Уманский пер., д.72б',
-    icon: 'g1.png'
+    icon: 'g1.svg'
   },
 
   {
     position: { lat: 59.816364, lng: 30.305555 },
     address: 'Стоянка – г.Санкт-Петербург, ул.Штурманская, дом 7, к.3',
-    icon: 'g2.png'
+    icon: 'g2.svg'
   },
   {
     position: { lat: 59.823634, lng: 30.161807 },
     address: 'Стоянка – Станционный Посёлок,  участок 23',
-    icon: 'g9.png'
+    icon: 'g9.svg'
   },
   {
     position: { lat: 59.809917, lng: 30.398845 },
     address: 'Стоянка – Промзона Шушары ул Ленина дом 1 литер АБ',
-    icon: 'g8.png'
+    icon: 'g8.svg'
   },
   {
     position: { lat: 59.791348, lng: 30.088654 },
     address: 'Стоянка – Складской переулок',
-    icon: 'g8.png'
+    icon: 'g8.svg'
   },
   {
     position: { lat: 59.808785, lng: 30.402478 },
     address: 'Стоянка - Промзона Шушары участок 72 Бадаевский проезд ',
-    icon: 'g10.png'
+    icon: 'g10.svg'
   },
   {
     position: { lat: 59.722512, lng: 30.067082 },
     address: 'Стоянка - Кингисепское шоссе 47',
-    icon: 'g10.png'
+    icon: 'g10.svg'
   },
   {
     position: { lat: 59.973861, lng: 30.452403 },
     address: 'Стоянка - Уманский пер., 80, к 4 ',
-    icon: 'g6.png'
+    icon: 'g6.svg'
   }
 ];
