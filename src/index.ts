@@ -60,6 +60,20 @@ const renderMarkers = (array) => {
       zIndex: 300,
     });
 
+    const markerShadow = new google.maps.Marker({
+      position: el?.position,
+      map: map,
+      icon: {
+        url: "circle-shadow.png",
+        scaledSize: new google.maps.Size(46, 33),
+        anchor: new google.maps.Point(16, 24),
+      },
+      title: el?.address,
+      zIndex: 290,
+    });
+
+    markerShadow.bindTo("position", marker);
+
     const infoWindow = new google.maps.InfoWindow({
       content: el?.address,
     });
