@@ -57,7 +57,7 @@ const renderMarkers = (array) => {
         anchor: new google.maps.Point(16, 32),
       },
       title: el?.address,
-      zIndex: 300,
+      zIndex: 300
     });
 
     const markerShadow = new google.maps.Marker({
@@ -68,8 +68,7 @@ const renderMarkers = (array) => {
         scaledSize: new google.maps.Size(46, 33),
         anchor: new google.maps.Point(16, 24),
       },
-      title: el?.address,
-      zIndex: 290,
+      zIndex: 290
     });
 
     markerShadow.bindTo("position", marker);
