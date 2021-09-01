@@ -14,8 +14,9 @@ import {
   data12,
   data13,
   data14,
+  dumps,
   markers,
-  garages,
+  garages
 } from "./data";
 import "./style.css";
 
@@ -84,17 +85,25 @@ const renderMarkers = (array) => {
         shouldFocus: false,
       });
     });
+
+    map.addListener("click", () => {
+      infoWindow.close();
+    });
+
   });
 };
 
 function initMap(): void {
+
   const center = new google.maps.LatLng(59.967502, 30.35128);
+
   map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
     zoom: 10,
     center: center,
     gestureHandling: "greedy",
   });
-  
+
+  renderMarkers(dumps);
   renderMarkers(markers);
   renderMarkers(garages);
 
