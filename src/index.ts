@@ -14,6 +14,7 @@ import {
   data12,
   data13,
   data14,
+  data15,
   dumps,
   markers,
   garages
@@ -121,6 +122,7 @@ function initMap(): void {
   renderData(data12, 12);
   renderData(data13, 13);
   renderData(data14, 14);
+  renderData(data15, 15);
 
   var noPoi = [
     {
