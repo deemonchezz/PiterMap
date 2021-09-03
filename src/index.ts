@@ -1,24 +1,5 @@
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
-import {
-  data1,
-  data2,
-  data3,
-  data4,
-  data5,
-  data6,
-  data7,
-  data8,
-  data9,
-  data10,
-  data11,
-  data12,
-  data13,
-  data14,
-  data15,
-  dumps,
-  markers,
-  garages
-} from "./data";
+import { data } from "./data";
 import "./style.css";
 
 let map: google.maps.Map;
@@ -26,7 +7,7 @@ const markersGroup = {};
 
 function hideMarkers(key, value) {
   const currentGroup = markersGroup[`marker${key}`];
-  for (var i = 0; i < currentGroup.length; i++) {
+  for (let i = 0; i < currentGroup.length; i++) {
     currentGroup[i].setVisible(value);
   }
 }
@@ -104,37 +85,19 @@ function initMap(): void {
     gestureHandling: "greedy",
   });
 
-  renderMarkers(dumps);
-  renderMarkers(markers);
-  renderMarkers(garages);
+  data.markers.forEach(el => renderMarkers(el));
+  data.areas.forEach(el => renderData(el, data.areas.indexOf(el)+1));
 
-  renderData(data1, 1);
-  renderData(data2, 2);
-  renderData(data3, 3);
-  renderData(data4, 4);
-  renderData(data5, 5);
-  renderData(data6, 6);
-  renderData(data7, 7);
-  renderData(data8, 8);
-  renderData(data9, 9);
-  renderData(data10, 10);
-  renderData(data11, 11);
-  renderData(data12, 12);
-  renderData(data13, 13);
-  renderData(data14, 14);
-  renderData(data15, 15);
-
-  var noPoi = [
+  let noPoi = [
     {
       featureType: "poi",
       elementType: "labels",
-
       stylers: [
         {
-          visibility: "off",
-        },
-      ],
-    },
+          visibility: "off"
+        }
+      ]
+    }
   ];
 
   const checkboxes = document.querySelectorAll(".checkbox-item");
@@ -144,8 +107,17 @@ function initMap(): void {
     });
   });
 
+  const checkboxAll: any = document.querySelector("#checkbox-item-all");
+  checkboxAll.addEventListener("click", () => {
+    checkboxes.forEach((i: any) => {
+      if (checkboxAll.checked !== i.checked){
+        i.click();
+      }
+    });
+  });
+
   map.setOptions({
-    styles: noPoi,
+    styles: noPoi
   });
 }
 
