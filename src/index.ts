@@ -21,7 +21,7 @@ const renderData = (data, key) => {
         map: map,
         icon: {
           url: `b${key}.png`,
-          scaledSize: new google.maps.Size(7, 7),
+          scaledSize: new google.maps.Size(10, 10),
         },
         zIndex: 100,
       }),
