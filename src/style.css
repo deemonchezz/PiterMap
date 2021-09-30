@@ -22,7 +22,27 @@ body {
   box-shadow: 0 0 10px #00000026;
   margin: 0;
   font-size: 14px;
+
+  height: 80vh;
+  overflow-y: scroll;
+  border-radius: 0.25rem;
+
 }
+
+.list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.list::-webkit-scrollbar-track {
+  background: none;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 0.25rem;
+}
+
+
 
 .list li {
   display: flex;
