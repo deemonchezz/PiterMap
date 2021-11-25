@@ -31643,7 +31643,6 @@ export const data =
 
 	markers :
 	[
-
     // dumps
 		[
 		  {
@@ -31731,7 +31730,6 @@ export const data =
 			icon: 'm3.svg'
 		  }
 		],
-
 		// garages :
 		[
 		  {
